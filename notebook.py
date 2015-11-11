@@ -11,6 +11,8 @@ class Note(object):
         self.id = last_id
 
 
+
+
     def match(self,filter):
         return filter in self.memo or filter in self.tags
 
@@ -18,6 +20,7 @@ class Note(object):
 class NoteBook(object):
     def __init__(self):
         self.notes =[]
+
     def new_note(self,memo,tags=""):
         self.notes.append(Note(memo,tags))
     def modify_note(self,note_id,memo):
