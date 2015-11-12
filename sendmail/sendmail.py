@@ -1,9 +1,14 @@
 #-* coding:utf8 -*-
 import smtplib
 from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
 from email.header import Header
+from email.mime.multipart import MIMEMultipart
 import ConfigParser
 import os
+
+#send mail with a image
+
 
 config = ConfigParser.ConfigParser()
 config.read(os.path.join(os.getcwd(),'myConfig.ini'))
@@ -15,15 +20,24 @@ receiver = config.get('receiverinfo','receiver')
 subject = 'python email test'
 smtpserver = 'smtp.sina.com'
 
-msg = MIMEText(u'''
-<h1>this is a html email</h1>
-<a href="gmail.com" title="这是我的新邮箱" target="_blank">这是我的新邮箱</a>
-'''
-               ,'html','utf-8')#中文需参数‘utf-8'，单字节字符不需要
-msg['Subject'] = Header(subject, 'utf-8')
+
+
+msgRoot = MIMEMultipart('relate')
+msgRoot['Subject'] = 'test message'
+msgText = MIMEText('''<b> Some <i> HTML </i> text </b > and an image.
+<img alt="" src="cid:image1"/>good!''',
+                   'html', 'utf-8')
+msgRoot.attach(msgText)
+
+with open('1%2Fwallpages%2F201507%2Fjuly2-1440x900.jpg','rb') as f:
+    msgImage = MIMEImage(f.read())
+
+msgImage.add_header('Content-ID', '<image1>')
+msgRoot.attach(msgImage)
+
 
 smtp = smtplib.SMTP()
 smtp.connect(smtpserver)
 smtp.login(username, password)
-smtp.sendmail(sender, receiver, msg.as_string())
+smtp.sendmail(sender, receiver, msgRoot.as_string())
 smtp.quit()
