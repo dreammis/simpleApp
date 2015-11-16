@@ -78,9 +78,26 @@ class Mail():
     def sendMixMail(self):
         msgRoot = MIMEMultipart('Mixed')
         msgRoot['Subject'] = Header(self.subject+' wow!, This mail contains lots of staff!!','utf-8')
-        msgText = 'Hi,I\'m'
+        msgText = 'Hi,I\'m a mixed staff mail,will you love me ?'
+        msgHtml = '''
+        <h1>
+        How Are You Today.
+        Here is the <a href="http://www.python.org">link</a> you wanted.
+        </h1>
+        '''
+        part1 = MIMEText(msgText,'plain')
+        part2 = MIMEText(msgHtml,'html')
 
+        attachItems = MIMEText(open('Detial.txt','rb').read(),'base64','utf-8')
+        attachItems['Content-Type'] = 'application/octet-stream'
+        attachItems["Content-Disposition"] = 'attachment; filename="Detial.txt"'
 
+        msgRoot.attach(part1)
+        msgRoot.attach(part2)
+        msgRoot.attach(attachItems)
+        msgRoot['Reply-to'] = '10010@qq.com'
+        msgRoot['From']="God<firedirx@sina.com>"
+        self.sendMail(msgRoot)
 
     def sendMail(self,msg):
         smtp = smtplib.SMTP()
@@ -114,4 +131,4 @@ def GetFileList(dir, fileList=[]):
 
 if __name__ == '__main__':
     mail = Mail()
-    mail.sendServeralMail()
+    mail.sendMixMail()
