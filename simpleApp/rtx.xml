@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="GB2312"?>
+<RTX2005OrLater_Exported_Data_9D373D5B-AA39-42e7-A819-BF5F7A8961FC>
+  <Database>
+    <Sys_User>
+      <Item ID="1001" UserName="Hunter" Pwd="DBD59CA344A25AB51734D0B24BF4353B00000000000000000000000000000000" PwdType="0" SmsID="" Name="李明" UserType="0" Gender="0" Face="126" Mobile="13500000000" Email="hunter@tencent.com" Phone="0571-8555555" ProfileOpenLevel="0" BuddyAuth="0" LastLogonTime="0" UserRight="00000000000000000000000000000000" AccountState="" UserVersion="6" AuthType="0"/>
+      <Item ID="1002" UserName="Dong" Pwd="" PwdType="0" SmsID="" Name="王东" UserType="0" Gender="0" Face="126" Mobile="" Email="13500000001" Phone="" ProfileOpenLevel="0" BuddyAuth="0" LastLogonTime="0" UserRight="00000000000000000000000000000000" AccountState="" UserVersion="2" AuthType="0"/>
+      <Item ID="1003" UserName="DZH" Pwd="" PwdType="0" SmsID="" Name="邓辉平" UserType="0" Gender="0" Face="126" Mobile="13500000002" Email="dzh@tencent.com" Phone="" ProfileOpenLevel="0" BuddyAuth="0" LastLogonTime="0" UserRight="00000000000000000000000000000000" AccountState="" UserVersion="3" AuthType="0"/>
+      <Item ID="1004" UserName="Xing" Pwd="" PwdType="0" SmsID="" Name="" UserType="0" Gender="0" Face="126" Mobile="13500000003" Email="xing@tencent.com" Phone="" ProfileOpenLevel="0" BuddyAuth="0" LastLogonTime="0" UserRight="00000000000000000000000000000000" AccountState="" UserVersion="4" AuthType="0"/>
+      <Item ID="1005" UserName="Dongmei" Pwd="EF038E2B986FAB15D4DF734654C85A6C00000000000000000000000000000000" PwdType="0" SmsID="" Name="冬梅" UserType="0" Gender="0" Face="126" Mobile="15685232632" Email="" Phone="" ProfileOpenLevel="0" BuddyAuth="0" LastLogonTime="0" UserRight="00000000000000000000000000000000" AccountState="" UserVersion="7" AuthType="0"/>
+      <Item ID="1006" UserName="jingjing" Pwd="" PwdType="0" SmsID="" Name="晶晶" UserType="0" Gender="0" Face="126" Mobile="" Email="" Phone="" ProfileOpenLevel="0" BuddyAuth="0" LastLogonTime="0" UserRight="00000000000000000000000000000000" AccountState="" UserVersion="8" AuthType="0"/>
+    </Sys_User>
+    <SYS_SysConfig>
+      <Item UserVersion="8" DeptVersion="30" DetailVersion="" RCABListVersion="" RCAUserListVersion="" UserLevelVersion="" Reserver1="" Reserver2="" Reserver3=""/>
+    </SYS_SysConfig>
+    <SYS_InnerFriend/>
+    <RTX_UserDetail>
+      <Item ExValue2="" ExValue1="" ID="1001" Birthday="0" Age="0" BloodType="0" Constellation="0" College="" HomePage="" Fax="" Address="" PostCode="" Country="" Province="" City="" Street="" Position="经理" memo="" Version="1" PhotoVersion="0" ExPosition="" ExValue3="" ExValue4="" ExValue5=""/>
+      <Item ExValue2="" ExValue1="" ID="1002" Birthday="0" Age="0" BloodType="0" Constellation="0" College="" HomePage="" Fax="" Address="" PostCode="" Country="" Province="" City="" Street="" Position="" memo="" Version="0" PhotoVersion="0" ExPosition="" ExValue3="" ExValue4="" ExValue5=""/>
+      <Item ExValue2="" ExValue1="" ID="1003" Birthday="0" Age="0" BloodType="0" Constellation="0" College="" HomePage="" Fax="" Address="" PostCode="" Country="" Province="" City="" Street="" Position="" memo="" Version="0" PhotoVersion="0" ExPosition="" ExValue3="" ExValue4="" ExValue5=""/>
+      <Item ExValue2="" ExValue1="" ID="1004" Birthday="0" Age="0" BloodType="0" Constellation="0" College="" HomePage="" Fax="" Address="" PostCode="" Country="" Province="" City="" Street="" Position="" memo="" Version="0" PhotoVersion="0" ExPosition="" ExValue3="" ExValue4="" ExValue5=""/>
+    </RTX_UserDetail>
+    <RTX_Dept>
+      <Item DeptID="1" PDeptID="0" DeptName="开发部门" SortID="1" Version="1" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="2" PDeptID="1" DeptName="基础开发部" SortID="1" Version="2" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="3" PDeptID="2" DeptName="产品组" SortID="1" Version="15" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="4" PDeptID="1" DeptName="高级开发部" SortID="2" Version="5" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="5" PDeptID="4" DeptName="科研组" SortID="1" Version="7" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="6" PDeptID="1" DeptName="无线开发部" SortID="3" Version="8" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="7" PDeptID="6" DeptName="server组" SortID="1" Version="10" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="8" PDeptID="0" DeptName="市场部门" SortID="2" Version="11" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="9" PDeptID="8" DeptName="市场拓展部" SortID="1" Version="13" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="10" PDeptID="4" DeptName="项目推进" SortID="2" Version="17" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="11" PDeptID="2" DeptName="经理组" SortID="2" Version="19" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="12" PDeptID="8" DeptName="里哦" SortID="2" Version="20" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="13" PDeptID="9" DeptName="破壳" SortID="1" Version="21" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="14" PDeptID="12" DeptName="咯破开" SortID="1" Version="22" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="15" PDeptID="8" DeptName="快哦" SortID="3" Version="23" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="16" PDeptID="0" DeptName="呀私密" SortID="3" Version="24" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="17" PDeptID="16" DeptName="雅库依" SortID="1" Version="25" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="18" PDeptID="16" DeptName="破哦" SortID="2" Version="26" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="19" PDeptID="17" DeptName="米库" SortID="1" Version="27" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="20" PDeptID="17" DeptName="统一" SortID="2" Version="28" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="21" PDeptID="19" DeptName="文" SortID="1" Version="29" DeptType="" DeptDescription="" DeptURL=""/>
+      <Item DeptID="22" PDeptID="18" DeptName="提问" SortID="1" Version="30" DeptType="" DeptDescription="" DeptURL=""/>
+    </RTX_Dept>
+    <RTX_DeptUser>
+      <Item DeptID="5" UserID="1002" SortID=""/>
+      <Item DeptID="7" UserID="1003" SortID=""/>
+      <Item DeptID="9" UserID="1004" SortID=""/>
+      <Item DeptID="3" UserID="1001" SortID=""/>
+      <Item DeptID="10" UserID="1005" SortID=""/>
+      <Item DeptID="11" UserID="1006" SortID=""/>
+    </RTX_DeptUser>
+    <App_Right_Role>
+      <Item ID="1" Name="User" DescriptionInfo="默认角色，默认用于所有用户"/>
+      <Item ID="2" Name="管理员" DescriptionInfo="可以操作 RTX 管理器的 RTX 用户"/>
+    </App_Right_Role>
+    <App_Right_Right>
+      <Item ID="2" Identity="RIGHT_INNER_SEND_SMS" Name="发送短信" Tag="0" Extend="" DefaultAllow="1" DescriptionInfo="若管理员为用户分配该权限，则用户可以通过RTX客户端发送手机短信。"/>
+      <Item ID="3" Identity="RIGHT_INNER_LAUNCH_CONVERSATION_N" Name="发起%d人以上的多人会话" Tag="0" Extend="30" DefaultAllow="1" DescriptionInfo="该权限的设置需要管理员配置权限参数。多人会话的人数即管理员需配置的参数。如权限参数为30，则被分配该权限的用户可以发起30人以上的多人会话。注：强烈建议权限限参数的值小于80,如设置超过80,会带来效率及带宽等严重问题，一切后果自负。"/>
+      <Item ID="4" Identity="RIGHT_INNER_SEND_FILE_N(M)" Name="传送大于%dM的文件" Tag="0" Extend="3" DefaultAllow="1" DescriptionInfo="该权限的设置需要管理员配置权限参数。允许发送文件的大小即为需配置的参数。如，权限参数配置为3，则被分配该权限的用户可以传送3M以上的文件，没有被开放此权限的用户只能传送小于3M的文件。"/>
+      <Item ID="5" Identity="RIGHT_INNER_SEND_FILE_BYP2P" Name="点对点方式传送文件" Tag="0" Extend="" DefaultAllow="1" DescriptionInfo="若管理员为用户分配该权限，则该用户可以在客户端采取点对点方式传送文件。"/>
+      <Item ID="6" Identity="RIGHT_INNER_SEND_BROADCAST_MSG" Name="发送全员广播消息" Tag="0" Extend="" DefaultAllow="2" DescriptionInfo="若管理员为用户分配该权限，则该用户可以在客户端对所有部门发送广播消息。"/>
+      <Item ID="7" Identity="RIGHT_INNER_REMOTE_LOGON" Name="远程登录" Tag="0" Extend="" DefaultAllow="1" DescriptionInfo="若管理员为用户分配该权限，则该用户可以通过客户端进行远程登录。"/>
+      <Item ID="8" Identity="RIGHT_INNER_SEND_BROADCAST_MSG_ONLY_CURRENT_DEPT" Name="发送所属部门广播消息" Tag="0" Extend="" DefaultAllow="2" DescriptionInfo="若管理员为用户分配该权限，则该用户可以在客户端对其所在的部门以及子部门发送广播消息。"/>
+      <Item ID="9" Identity="RIGHT_OUT_CREATE_MULTI_SESSION" Name="发起外部多人会话" Tag="0" Extend="" DefaultAllow="2" DescriptionInfo="若管理员为对外用户分配该权限，则该用户可以发起外部多人会话，内部用户分配该权限不起作用。"/>
+      <Item ID="10" Identity="RIGHT_OUT_SEND_FILE_LIMIT" Name="对外发送小于%dM的文件" Tag="0" Extend="10" DefaultAllow="2" DescriptionInfo="若管理员为用户分配该权限，则该用户可以对外部用户发送限制大小的文件或者图片。"/>
+      <Item ID="11" Identity="RIGHT_OUT_SEND_FILE_NOLIMIT" Name="无限制对外发送文件大小" Tag="0" Extend="" DefaultAllow="2" DescriptionInfo="若管理员为用户分配该权限，则该用户可以对外部用户发送不限制大小的文件或者图片。"/>
+    </App_Right_Right>
+    <App_Right_RoleRight>
+      <Item RoleID="1" RightID="6" Allow="0" Deny="0"/>
+      <Item RoleID="1" RightID="5" Allow="1" Deny="0"/>
+      <Item RoleID="1" RightID="4" Allow="1" Deny="0"/>
+      <Item RoleID="1" RightID="3" Allow="1" Deny="0"/>
+      <Item RoleID="1" RightID="2" Allow="1" Deny="0"/>
+      <Item RoleID="1" RightID="7" Allow="1" Deny="0"/>
+      <Item RoleID="1" RightID="8" Allow="0" Deny="0"/>
+      <Item RoleID="1" RightID="9" Allow="1" Deny="0"/>
+      <Item RoleID="1" RightID="10" Allow="1" Deny="0"/>
+      <Item RoleID="1" RightID="11" Allow="0" Deny="0"/>
+    </App_Right_RoleRight>
+    <App_Right_UserRole/>
+    <App_Right_RoleApp/>
+    <App_Plugin_Info/>
+    <APP_ORG_File>
+      <Item ID="0" Name="默认组织架构" Version="23"/>
+    </APP_ORG_File>
+    <APP_ORG_UserFile/>
+    <RTX_UserLevel/>
+  </Database>
+  <OrgstructFileInfo>
+    <File name="Orgstruct_0" base64encode=" eJwBbAGT/kJRUVpJUGIBAAB4nI2TX0uDUByG74O+g5z7lfbXYG539QWq+2gSQtOh FXXnam0XRcssNrCWI0hh0BiLKDfyy+x48lt0WnjQlk5vhMPz/s5zzqvZ/HFxnzri ZUWQRA4wczSgeHFXKgjiHge2NtczLMjnZmeyG7J0WFKobV7mQIYBud8FSijgED1+ GECJO0WeA2hQQYOa13rzWpUoGBBwqMK65p/ZfsMG1MFJCa/REXSBoI8Oaqsk8D+9 GNAjx4J6GQuEufkxGBEJudbRdTUmMBlcCnJ+p4nwXslay2QXS0Pm7XQtmoxvfyDj xbuyv1wjndlKEPUaJnLcKWarAa3wMi5/yvknd2NJPe+n8N5JanItinoXOuzdxYox pEpkvsKnfrrDM+Rz8WuXUH+OmU3agzfdn/FDNeV4UiR0O3/GJ6RIJVBTkVWG3WqM F2nDN86ho48+H2JAcpeo18dgSg82fKXJ9tG3gn/8b1W5jKrl9a/i"/>
+  </OrgstructFileInfo>
+  <TabFileInfo>
+    <File name="TabConfig.xml" base64encode=" eJyzsa/IzVEoSy0qzszPs1Uy1DNQUkjNS85PycxLt1VydzIyNjRSsrfj5bIJSUwq VghLLbJVMlHSBwoAAAuLEBw= "/>
+  </TabFileInfo>
+  <DisGroupDB>
+    <GroupBasicInfo/>
+    <GroupUserList/>
+    <TotalGroupInfo>
+      <Item IndexNumber="0" CurrentGroupMaxVer="0" TotalGroupCount="0" MaxGroupID="0" szExpand1="" dwExpand1="0" dwExpand2="0"/>
+    </TotalGroupInfo>
+  </DisGroupDB>
+  <ClientConfig>
+    <ModifyAllowMarks>
+      <Item ConfigName="AllowModifyUserInfo" ConfigValue="1"/>
+      <Item ConfigName="AllowModifyUserPwd" ConfigValue="1"/>
+      <Item ConfigName="AllowModifyUserPhoto" ConfigValue="1"/>
+    </ModifyAllowMarks>
+    <ClientDisplay>
+      <Item ConfigName="IsFixedSort" ConfigValue="0"/>
+      <Item ConfigName="IsForbidModify" ConfigValue="0"/>
+      <Item ConfigName="IsDefShowName" ConfigValue="0"/>
+    </ClientDisplay>
+    <SYSMSG_Config>
+      <Item ConfigName="SYSMSG_Stay_Time_In_Seconds" ConfigValue="10"/>
+      <Item ConfigName="SYSMSG_Never_Disappear" ConfigValue="10"/>
+      <Item ConfigName="SYSMSG_Send_to_OnLine" ConfigValue="10"/>
+    </SYSMSG_Config>
+    <Orgstruct StartTimer="1" TimeInterval="2000"/>
+  </ClientConfig>
+</RTX2005OrLater_Exported_Data_9D373D5B-AA39-42e7-A819-BF5F7A8961FC>
