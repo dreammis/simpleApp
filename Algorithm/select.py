@@ -1,4 +1,4 @@
-def selectSort(arr):
+def select_Sort(arr):
     for i in range(len(arr)-1,-1,-1):
         tem = ''
         index = len(arr)-1-i
@@ -21,5 +21,5 @@ def maopaoSort(arr):
     return arr
 
 a = [1,23,543,634,23633322,442,5,1534,2,45]
-print selectSort(a)
+print select_Sort(a)
 
