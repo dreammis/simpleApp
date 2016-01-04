@@ -1,5 +1,9 @@
 #-* coding:utf8 -*-
 from xml.etree import ElementTree as xml
+import sqlite3
+from sys import argv
+import time
+import os
 
 def openXml(file):
     f = open(file,'r')
@@ -7,14 +11,9 @@ def openXml(file):
     content.encode('utf-8')
     content.replace('gb2312','utf-8')
     return content
-
-
 def analyseUser(content):
     root = xml.fromstring(content)
-
     userInfo = root.findall(".//Sys_User/")
-
-
     userD = []
     for user in userInfo:
         userDic = {}
@@ -46,43 +45,175 @@ def analyseDep(content,userD):
                     items['DeptID'] = deptUser.attrib['DeptID']
     return userD
 
-def analyseRootDep(content,userD):
+
+def analyseRootDep(content,conn):
     root = xml.fromstring(content)
     DeptPosition = root.findall('.//RTX_Dept/')
 
-    for dept in DeptPosition:
-        deptId = dept.attrib['DeptID']
-        for items in userD:
-            if deptId == items['DeptID']:
-                    items['DeptName'] = dept.attrib['DeptName']
+    cursor = conn.cursor()
+    cursor.execute('drop table if exists deptinfo')
+    cursor.execute("create table deptinfo(DeptID varchar(20) primary key, PDeptID  varchar(20),DeptName varchar(50))")
 
+    # wholeDeptDic= []
+    for singleDept in DeptPosition:
+        # deptDic = {}
+        # deptDic['DeptID'] = singleDept.attrib['DeptID']
+        # deptDic['PDeptID'] = singleDept.attrib['PDeptID']
+        # deptDic['DeptName'] = singleDept.attrib['DeptName']
+        # wholeDeptDic.append(deptDic)
+        cursor.execute("insert into deptinfo (DeptID,PDeptID,DeptName) values (?,?,?)",
+                       (singleDept.attrib['DeptID'],singleDept.attrib['PDeptID'],singleDept.attrib['DeptName']))
+    conn.commit()
+
+def findDepName(userD):
+
+    for userInfo in userD:
+        name = ""
+        userDeptId = userInfo['DeptID']
+        if userDeptId == '10':
+            print (userDeptId)
+        name = name +gets(userDeptId,name)
+        userInfo['DeptName'] = danweiId + '/'+name.rstrip('/')
     return userD
 
-def outExcel(userD):
-    import xlwt
-    wbk  = xlwt.Workbook()
-    sheet = wbk.add_sheet('sheet 1', cell_overwrite_ok=True)
 
-    for index in range(len(userD)):
-        sheet.write(index,0,userD[index].get('DeptName'))
-        sheet.write(index,1,userD[index]['username'])
-        sheet.write(index,2,userD[index]['name'])
-        sheet.write(index,3,userD[index]['gender'])
-        sheet.write(index,4,userD[index]['email'])
-        sheet.write(index,5,userD[index]['mobile'])
-        sheet.write(index,6,userD[index]['Position'])
-        sheet.write(index,7,'202cb962ac59075b964b07152d234b70')
-        sheet.write(index,8,'1')
-    wbk.save('ant.xls')
+def gets(userDeptId,name):
+    cursor = conn.cursor()
+    #当userDeptId是两位数就会提示传入两个参数，这里需要传入元组（x,)
+    cursor.execute("select DeptID,PDeptID,DeptName from deptinfo where DeptID=?",(userDeptId,))
+    result = cursor.fetchall()
+    if result:
+        depName = result[0][2]
+
+        pdepId = result[0][1]
+
+        name = depName+'/'+name
+        cursor.close()
+        if pdepId != '0':
+            return gets(pdepId,name)
+        else:
+            return name
+
+
+        # reDic = copy.copy(wholeDeptDic)
+        #
+        #
+        #
+        # for deptInfo in wholeDeptDic:
+        #     name = ''
+        #     if userDeptId == deptInfo['DeptID']:
+        #         # name = deptInfo['DeptName']+'/'+name
+        #         reDic.remove(deptInfo)
+        #         getDeptName(deptInfo,reDic,name)
+
+def getDeptName(deptInfo,reDic,name):
+
+    name = deptInfo['DeptName']+'/'+name
+    flag = False
+    if deptInfo['PDeptID'] !='0':
+        for items in reDic:
+            if items['DeptID'] == deptInfo['PDeptID']:
+                # name = items['DeptName']+'/'+name
+                reDic.remove(items)
+                getDeptName(items,reDic,name)
+    else:
+        return name
+
+
+# def outExcel(userD):
+#     import xlwt
+#     wbk  = xlwt.Workbook()
+#     sheet = wbk.add_sheet('sheet 1', cell_overwrite_ok=True)
+#
+#     for index in range(len(userD)):
+#         sheet.write(index,0,userD[index].get('DeptName'))
+#         sheet.write(index,1,userD[index]['username'])
+#         sheet.write(index,2,userD[index]['name'])
+#         sheet.write(index,3,userD[index]['gender'])
+#         sheet.write(index,4,userD[index]['email'])
+#         sheet.write(index,5,userD[index]['mobile'])
+#         sheet.write(index,6,userD[index]['Position'])
+#         sheet.write(index,7,'202cb962ac59075b964b07152d234b70')
+#         sheet.write(index,8,'1')
+#     wbk.save('antUserInfo.xls')
 
 if __name__ == '__main__':
-    xmlContent = openXml('rtx.xml')
 
+    print ('*'*50)
+    for star in range(5):
+        if star == 3:
+            print ('BigAnt 导入工具')
+        print ('*'+'\n')
+    print ('*'*50)
+    while True:
+        xmlfilePath=[]
+
+        filepath = input("RTX XML存放目录:")
+        if not os.path.isdir(filepath):
+            print ('请输入一个正确的目录。')
+            continue
+        else:
+            for dirpath,dirnames,files in os.walk(filepath):
+                for file in files:
+                    if file[-4:]=='.xml':
+                    # filenames=filter(lambda filename:filename[-4:]=='.xml',file)
+                        file = os.path.join(filepath,file)
+                        xmlfilePath.append(file)
+            if len(xmlfilePath)>2 :
+                print ('该工具仅支持单xml导入')
+                continue
+            elif len(xmlfilePath)==0:
+                print('该目录并没有xml文件')
+                continue
+            break
+
+    print ('*'+'单位/公司名称设定')
+    danweiId = input("请输入单位或者公司名称:")
+
+
+    xmlContent = openXml(xmlfilePath[0])
+    # danweiId = ''
+    if len(argv)>1:
+        danweiId = danweiId+argv[1]
+        # print (danweiId)
+    utTime = time.time()
+    dbfile = 'dept'+str(utTime)+'.db'
+    conn = sqlite3.connect(dbfile)
     userInfo_1 = analyseUser(xmlContent)
     userInfo_2 = analyseDep(xmlContent,userInfo_1)
-    userInfo_3 = analyseRootDep(xmlContent,userInfo_2)
+
+    analyseRootDep(xmlContent,conn)
+    userInfo_3 = findDepName(userInfo_2)
+
     print (userInfo_3)
-    outExcel(userInfo_3)
-    with open('rm.txt','w+') as f:
-        for items in userInfo_3:
-            f.write(str(items)+'\n')
+    # outExcel(userInfo_3)
+
+
+    import codecs
+    import os
+    if os.path.exists(os.path.join(filepath,'antUserInfo.txt')):
+        os.remove(os.path.join(filepath,'antUserInfo.txt'))
+    with codecs.open(os.path.join(filepath,'antUserInfo.txt'),'a','utf-8') as f:
+        for index in range(len(userInfo_3)):
+            f.write(str(userInfo_3[index].get('DeptName'))+'\t')
+            f.write(str(userInfo_3[index]['username'])+'\t')
+            f.write(str(userInfo_3[index]['name'])+'\t')
+            f.write(str(userInfo_3[index]['gender'])+'\t')
+            f.write(str(userInfo_3[index]['email'])+'\t')
+            f.write(str(userInfo_3[index]['mobile'])+'\t')
+            f.write(str(userInfo_3[index]['Position'])+'\t')
+            f.write('202cb962ac59075b964b07152d234b70'+'\t')
+            f.write('1'+'\r\n')
+    conn.close()
+
+    for star in range(5):
+        if star == 3:
+            print ('结束！')
+        print ('*'+'\n')
+    print ('生成文件在%s'%filepath)
+    print ('生成文件名是antUserInfo.txt')
+    print ('*'+'\n')
+    print ('将此文件导入大蚂蚁控制台即可。')
+    input('任意键结束.')
+
+
