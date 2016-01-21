@@ -1,3 +1,4 @@
+#-* coding:utf8 -*-
 def insert_sort(List):
     sorted = 1
     while sorted == len(List):
@@ -5,15 +6,16 @@ def insert_sort(List):
 
 
         for i in range(sorted,0,-1):
-            if List[i]>
+            if List[i]>0:
+                pass
 
 
         sorted +=1
 
 
-def insert_sort(l):
+def insert_sort1(l):
     print l
-    for i in range(1,len(l)): #�ӵڶ���Ԫ�ؿ�ʼ
+    for i in range(1,len(l)): #从第二个元素开始
         value = l[i]
         while i >= 1 and l[i-1] > value:
             l[i] = l[i-1]
