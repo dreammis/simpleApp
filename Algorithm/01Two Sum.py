@@ -10,7 +10,7 @@ class Solution(object):
         :rtype: List[int]
         """
         d = {}
-        for index,value in enumerate(nums):
+        for index, value in enumerate(nums):
             if target-value in d:
                 return d[target-value]+1,index+1
             d[value]=index

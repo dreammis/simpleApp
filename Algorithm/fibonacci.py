@@ -15,10 +15,10 @@ def triangles():
     while n<10:
         yield a
         if n<2:
-            a = [1,1]
+            a = [1, 1]
             n = n +1
         else:
-            a = a[:1] +[a[i]+a[i+1] for i in range(len(a)) if i!= len(a)-1] + a[-1:]
+            a = a[:1] + [a[i]+a[i+1] for i in range(len(a)) if i != len(a)-1] + a[-1:]
             n = n+1
 
 
@@ -69,6 +69,41 @@ def now():
 
 
 now()
+
+
+
+
+
+
+def rabbitfib(n):
+    a, b = 0, 1
+    for i in range(n):
+        a, b = b, a+b
+    return b
+
+
+
+l1 = [1, 2, 4, 7,  9, 34]
+
+l2 = [5, 8, 11, 22,  24, 34]
+
+
+def merge_two_ordered_list(list1, list2):
+    new_list = []
+
+    while len(list1) >0 and len(list2)>0:
+        if list1[0] > list2[0]:
+            new_list.append(list1[0])
+            del(list1[0])
+        else:
+            new_list.append(list2[0])
+            del(list2[0])
+    return new_list
+
+merge_two_ordered_list(l1, l2)
+
+
+
 
 
 
